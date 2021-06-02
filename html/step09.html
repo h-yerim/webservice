@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h3>폼 요소 작성하기</h3>
+    <!-- 하이퍼링크로 넘어가는 건 다 get 방식-->
+    <form action="save.html" method = "post">
+        <div>
+        <label for="email">이메일</label> <!-- label for와 id 일치시키면 label 클릭시 id쪽(input)으로 넘어감 -->
+        <input type="email" name="email" id="email"/>
+        </div>
+        <div>
+        <label for="pwd">비밀번호</label>
+        <input type="password" name="pwd" id="pwd"/>
+        </div>
+        <div>       
+        <button type="submit">로그인</button>
+        <button type = "reset">취소</button>
+        </div>
+    </form>
+</body>
+</html>
+

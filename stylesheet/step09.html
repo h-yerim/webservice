@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position(relative, fiexed, absolute)</title>
+    <style>
+       .box{
+           width: 100px;
+           height: 100px;
+           border: 1px solid red;
+       }
+       .spacer{
+           height: 500px;
+           background-color: aqua;
+       }
+       #one{ /*상대적이기때문에 static을 기준으로(전위치기준) 위로 100, 왼쪽으로 10띄운것 (static 위치가 달라지면 얘도 달라짐)*/
+           position: relative;
+           top: 100px;
+           left: 20px;
+       }
+       #two{ /*얘는 화면의 시작을 기준으로 (relative랑 기준점이 다름)*/
+           position: absolute;
+           top: 100px;
+           left: 20px;
+       }
+       #three{ /*viewpoint좌표를 기준으로 하기때문에 스크롤을 내려도 그 내린것 기준으로 계속 고정이 됨*/
+           position: fixed;
+           top: 100px;
+           left: 500px;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">static</div>
+    <div class="box" id="one">relative</div>
+    <div class="spacer"></div>
+    <div class="box" id="two">absolute</div>
+    <div class="box">뭐하니?</div>
+    <div class="box" id="three">fixed</div>
+    <div class="box">여기</div>
+    
+</body>
+</html>

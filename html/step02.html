@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>a요소는 하이퍼링크, 책갈피(=fragment identifier), 메일, 자바스크립트를 수행 할 수 있다.</h1>
+    <!--상대경로 지정시 다른곳에서 누르면 다르게 동작함. 어디서 돌리든 같게 동작하게 싶으면 절대경로로 지정해야-->
+    <h2>상대경로 (내 폴더를 기점으로 이동하는 것)</h2>
+    <a href="../index.html"target="_self">메인 index.html</a><br>
+    <a href="step01.html" target="_blank">step01.html</a><br>
+    <!-- 위 코드랑 아래코드는(step01 = ./step01)같은뜻임 ./이 자기자신 폴더부터 찾아가란것 -->
+    <a href="./step01.html">step01.html</a><br>
+    <!-- 밑의 코드는 해당 폴더가 없기때문에 404 not found 가 뜸-->
+    <a href="aa/test.html">test.html</a><br>
+    <h2>다른 웹의 절대 경로 이동</h2>
+    <a href="http://www.naver.com">네이버로 이동</a><br>
+    <a href="http://www.daum.net">다음으로 이동</a><br>
+    <h2>같은 웹의 절대 경로 이동</h2>
+    <!--/를 쓰면 루트를 뜻함. 여기서 / 는 www 폴더를 의미-->
+    <a href="/index.html">메인 index.html</a><br>
+    <a href="http://localhost/index.html">메인 index.html</a><br>
+    <h2>메일보내기</h2>
+    <a href="mailto:hrim1103@hanmail.net">메일보내기</a>
+    <h2>전화걸기</h2>
+    <a href="tel:0100000000">전화걸기</a>
+    <h2>자바스크립트 호출</h2>
+    <a href="javascript:alert('잘하고 있어')">자바스크립트 호출</a>
+    <h2>책갈피</h2>
+    <a href="#bottom">특정영역으로 이동</a>
+    <div style="height:5000px;background:blueviolet"></div>
+    <p id='bottom'>bottom</p>
+</body>
+</html>
