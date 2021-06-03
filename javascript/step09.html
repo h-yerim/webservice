@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+</head>
+<body>
+    <h1 id = "test">ㅈㅎㄹ</h1>
+</body>
+<script>
+    /* 노드 생성
+    const h1 = document.createElement("h1");
+    const textNode = document.createTextNode("hello");
+    h1.appendChild(textNode);
+    document.body.append(h1);
+
+    //위의 코드를 한줄로 할 수 있다.
+    //document.body.innerHTML = '<h1>hello</h1>';
+    */
+
+    const h1 = document.getElementById("test"); //id통해 html 객체 가져옴
+    h1.innerHTML = "ㄹㅎㅈ"; //수정
+    h1.remove(); // 삭제
+
+
+</script>
+</html>

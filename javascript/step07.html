@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    
+</head>
+<body>  
+</body>
+<script>
+    const mem = {
+        num: 1,
+        "a-ddr" : "한국"
+    };
+    console.log(mem.num);
+    console.log(mem["a-ddr"]); //javascript naming rule을 위반하는경우 이렇게 출력해야
+
+    delete mem["a-ddr"]; //특정키 삭제
+    console.log(mem["a-ddr"]); // 출력하지 않는다.
+
+    const club = {
+        "squadName" : "Super herosquad",
+        "homeTown" : "Metro City",
+        "formed" : 2016,
+        "secretBase" : "Super tower",
+        "active" : true,
+        "members" : [
+            { 
+                "name" : "Molecule Man",
+                "age" : 29,
+                "secretIdentity" : "Dan Jukes",
+                "powers" : [
+                    "Radiation resistance",
+                    "Turning tiny", 
+                    "Radiation blast"
+                ]
+            },
+            {
+                "name" : "Madame Uppercut",
+                "age" : 39,
+                "secretIdentity" : "Jane Wilson",
+                "powers" : [
+                    "Million tonne punch",
+                    "Damage resistance",
+                    "Superhuman reflexes"
+                ]
+            },
+            {
+                "name" : "Eternal Flame",
+                "age" : 1000000,
+                "secretIdentity" : "Unknown",
+                "powers" : [
+                    "Immortality",
+                    "Heat Immunity",
+                    "Inferno",
+                    "Teleportation",
+                    "Interdimensional travel"
+                ]
+            }
+        ]
+    };
+
+    //value 값들 다 가져오는 작업임
+    let sname = club.squadName;
+    let homeTown = club.homeTown;
+    let formed = club.formed;
+    let secretBase = club.secretBase;
+    let active = club.active;
+    console.log(sname);
+    console.log(homeTown);
+    console.log(formed);
+    console.log(secretBase);
+    console.log(active);
+
+    const membersArray = club.members;
+    let html = "<table>";
+        html += "<tr>";
+        html += "<th>이름</th>";
+        html += "<th>나이</th>";
+        html += "<th>개인정보</th>";
+        html += "<th>파워즈</th>";
+        html += "</tr>";
+
+    for(const memberObj of membersArray){ //배열의 인덱스에는 각각 object가 들어있기 때문에 받을곳을 const 로 obj 선언 (let으로 받아도 에러는 안남)
+        html += "<tr>";
+
+        html += "<td>";
+        let name = memberObj.name; //받을 값이 string이기 때문에 let 선언
+        html += name+"</td>";
+        
+        html += "<td>";
+        let age = memberObj.age; //이렇게 td태그로 각 열에 해당하는 값들을 넣어줌
+        html += age+"</td>";
+        
+        html += "<td>";
+        let secretIdentity = memberObj.secretIdentity; 
+        html += secretIdentity+"</td>";
+        
+        html += "<td>";
+        const powersArray = memberObj.powers;
+        console.log(name,age,secretIdentity); //이걸로 정보가 들어가진 않음 이거는 console test용구문이었기때문에 html table구문에선 해당이 안됨
+        for( let power of powersArray){
+            console.log(power);
+            html += power+ " ";
+        }   
+        html += "</td>";
+        html += "</tr>";
+    }
+    html += "</table>";
+    document.body.innerHTML = html;
+
+    let str = '{"name":"jeong","age":"21"}'; //object를 문자열로 감싸놓은 형태
+    const member = JSON.parse(str); //문자열 => object
+    console.log(member.name);
+    console.log(member.age);
+    alert(member);
+
+    let str2 = JSON.stringify(member);
+    alert(str2);
+
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datatype</title>
+    <script>
+        //let 변수는 변수의 이중선언 못함. a 한번 선언했으면 못써
+        //1. number type (정수형 소수형 따로 없고 그냥 선언하면 됨)
+        let num1 = 10; //int
+        let num2 = 20.1;//float(실수형. double 따로없음)
+        console.log(typeof num1);
+        console.log(typeof num2);
+
+        //2. string type
+        let myName = "정혜림";
+        let yourName = '에스파';
+        console.log(typeof myName);
+
+        //3. boolean type
+        let isRun = true;
+        let isGreater = 10>5;
+        console.log(typeof isGreater);
+
+        //4.undefined type -> 값은 없으나 primitive타입 (객체가 생성되지 않음)
+        let a;
+        let b = undefined;
+        let c = a+1;
+        let z = a+"1";
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(c); //NaN 이 반환됨 => 숫자가 아니라는 뜻 (undefined에 숫자를 더하면 NaN이 나옴을 기억! = undefined는 0이아님)
+        console.log(z); //undefined1 => undefined가 문자열 취급되어 1이 붙어서 나온다.
+
+        //5.null -> 값이 없는건 똑같으나 object. (객체 생성됨, 자료형이 아님) 
+        let d = null; 
+        console.log(typeof d); //object
+        let e = d+1;
+        let h = d+1;
+        console.log(e); // 1이 반환됨 (숫자를 더하면 null을 0취급)
+        console.log(h); // null1 => null이 문자열 취급되어 1과 붙어서 나옴.
+
+        // == 은 값을 비교하는거고 ===은 자료형을 비교함
+        // ex) undefined == null -> true cf) undefined===null -> false
+        // "true" == true -> true cf) "true"===true -> false
+        console.log(a==d); //true (값이 없는것은 똑같음)
+        console.log(a===d); //false
+
+        //6. object type (map 구조 => key:value / key 값은 변수나 문자열로 선언가능, value에는 자바스크립트의 모든 자료형이 올수있음)
+        const obj = {num : 1, name: '림', isman: false};
+        console.log(typeof obj);
+
+        //7. array type
+        //(배열안에 자바스크립트의 모든자료형을 넣을 수 있다. ex) boolean, num ...)
+        //배열을 늘릴 수 있다.
+        const names = ['림','에스파','잡스'];
+        console.log(typeof names); //object로 나옴. (구분하기위해 우리는 array, object라 부르지만 실제로는 둘다 object임.)
+
+       //8. function type
+       //함수식
+       const f = function(){       // = function f()랑 똑같은거임
+
+       }
+       f(); //함수호출
+       //선언적 함수(반환값 따로 안줘도 되고 return으로 반환하면 됨)
+       function sum(){
+        
+       }
+       sum();
+       console.log(typeof f); //function
+       console.log(typeof sum); //function
+    </script>
+</head>
+<body>    
+</body>
+</html>

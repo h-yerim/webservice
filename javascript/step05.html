@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolean</title>
+    <script>
+        let isRun = false;
+        let isWait = false;
+        let isSmaller = 10 < 5;
+        let isEqual = 10 == 100;
+        let isDifferent = 10 != 10;
+        if(isRun){
+            console.log("달리고 있어");
+        }else{
+            console.log("달리고 있지 않아");
+        }
+
+        //falcy value
+        // 자바 스크립트는 if의 조건식에 숫자나 falsy value를 집어넣을 수있다.
+        // 숫자를 집어넣을경우 (1,2,...) true로 처리하고 falsy value는 false로 처리함. (falsy value는 꼭 알아둘것)
+        let a = 1;
+        let b = '';
+        let c;
+        let d = parseInt('abc');
+        if(b){
+            console.log(true);
+        }else{
+            console.log(false);
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
