@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <script src ="../js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){ //window.onload기능과 같은 기능을 수행함, body밑에 코딩할거면 사용할 필요X
+            //document.getElementsByClassName("welcome").innerHTML <- javascript는 이렇게 접근 +html 문 넣음
+            //document.getElementsByClassName("welcome").style <- javascript의 css
+            $('.welcome') //class로 접근
+            .html('<p>hello jquery</p>') //class안에 p태그문 넣어주겠다
+            .css('background-color','yellow'); //css스타일 건다
+        });
+
+        /*$(document).ready(function(){ <- 똑같은 onload코드
+            
+        });
+        */ 
+    </script>
+</head>
+<body>
+    <div class ="welcome"></div>
+    <div class ="welcome"></div>
+</body>
+</html>

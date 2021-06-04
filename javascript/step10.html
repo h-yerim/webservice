@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script>
+        function send(){
+            alert('전송');
+        }
+        alert('after title');
+
+        window.onload = function(){   //페이지가 다 로딩된후에(모든 html 객체 생성후) 호출됨(onload) , body 위에 코딩하고 싶으면 이방식으로
+               //event listner 방식(click event)
+        document.getElementById("sendBtn")
+        .addEventListener("click",function(){
+            alert('전송2');
+        });
+    
+        //event listner 방식(key event)
+        document.getElementById("inputMsg")
+        .addEventListener("keydown",function(event){
+            if(event.keyCode == 13){
+                alert(document.getElementById("inputMsg").value);
+                document.getElementById("inputMsg").value='';
+            }
+        });
+        document.getElementById("inputMsg").focus();
+        }
+    </script>
+</head>
+
+<body>
+    <!--인라인 이벤트-->
+    <button onclick="javascript:send();">전송1</button>
+    <!--리스너 이벤트-->
+    <button id = "sendBtn">전송 2</button>
+    <input type="text" id ="inputMsg">
+</body>
+<script>
+    alert('after body');
+</script>
+</html>
