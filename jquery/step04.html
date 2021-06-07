@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery manipulation</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <style>
+        div{
+            border: 1px solid red;
+        }
+        p{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        $(function(){
+            //$('div').prepend('<strong> hi </strong>');
+            //위의 코드와 같은데 사용법만 다름
+            //$('<strong> hi </strong>').prependTo('div');
+
+            //$('div').append('<strong> hi </strong>');
+            //역시 위의 코드와 결과는 동일함.
+            //$('<strong> hi </strong>').appendTo('div');
+
+            //$('div').after('<strong> Hi </strong>');
+            //$('div').before('<strong> Hi </strong>');
+
+            //그안의 문장 그대로 수정해주기때문에 text는 태그가 안먹음
+            //$('p').text('<strong>제어쿼리</strong>');
+            //정보 가져옴
+            //alert($('p').text());
+            //cf. html은 태그가 먹음
+            //$('p').html('<strong>제어쿼리</strong>');
+            //alert($('p').html());
+            
+            //$('p').remove();
+            //지우고 나서 다시 태그와 내용만들려면
+            //$('div').append('<p>jquery</p>')
+            //remove와 같은 효과
+            //$('p').detach();
+            //element 내용만 비우고 태그는 살아있음
+            //$('p').empty();
+            //비운후 내용 변경시켜주는 코드
+            //$('p').empty().text('제이쿼리');
+            
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p> &lt;strong&gt;jquery&lt;/strong&gt; </p>
+    </div>
+</body>
+</html>
