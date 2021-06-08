@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajac Get</title>
+    <title>Ajax Get- xml</title>
     <script src ="../js/jquery-3.6.0.js"></script>
     <script>
         $(function(){
             $('#btn').click(function(){
 
                 $.ajax({
-                    url: 'http://www.acornacademy.co.kr/blockchain/naver_json.jsp',
-                    type: 'GET',
-                    dataType: 'json',
-                    error: function(){
-                        alert('error')
-                    },
-                    success: function(json){
+                 url: 'data.xml',
+                 type: 'GET',
+                 dataType: 'xml',
+                 error: function(){
+                     alert('error');
+                 },
+                 success: function(xml){
+                    $("#sel").empty(); //호출할때마다 내용 비워주도록 
+                    let html = "<ul>";
+                    $(xml).find('category').find('item').each(function(){//item이 하나뿐이라면 category부분은 빼도 된다.
+                        let value = $(this).find('value').text(); //find로 찾고 text로 내용을 가져온다.
+                        let title = $(this).find('title').text();
+                        html +="<li>"+value+"("+title+")"+"</li>";
+                    }); 
+                    html += "</ul>";
+                        $("#sel").append(html);
+                 }  
                         
-                    }
+                    
                 }); //end of ajax
                     
             }); //end of button event
