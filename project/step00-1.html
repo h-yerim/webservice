@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get</title>
+    <script src ="../js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+
+                $.ajax({
+                    url: 'realdata.json',
+                    dataType: 'json',
+                    error: function(){
+                        alert('error')
+                    },
+                    success: function(json){
+                        //console.log(json);
+                        //console.log(typeof json);
+                        
+                        const dataArray = json.data;
+                        let html = "<table>";
+                        html += "<tr>";
+                        html += "<th>건축연도</th>";
+                        html += "<th>구분</th>";
+                        html += "<th>문화재명</th>";
+                        html += "<th>위치</th>";
+                        html += "</tr>";
+
+                        for(const obj of dataArray){
+                            html += "<tr>";
+                            
+                            html += "<td>";
+                            let year = obj.건축연도;
+                            html += year+"</td>";
+                            
+                            html += "<td>";
+                            let genre = obj.구분;
+                            html += genre+"</td>";
+                            
+                            html += "<td>";
+                            let name = obj.문화재명;
+                            html += name+"</td>";
+
+                            html += "<td>";
+                            let loc = obj.위치;
+                            html += loc+"</td>";
+                            
+                            html += "</tr>";
+                        }
+                        html += "</table>";
+                        $("#sel").append(html);
+                    
+                    }
+                }); //end of ajax
+                    
+            }); //end of button event
+        }); //end of onloading
+    </script>
+</head>
+<body>
+    <button id="btn">가져오기</button>
+    <div id="sel">
+
+    </div>
+    
+</body>
+</html>
