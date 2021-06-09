@@ -11,7 +11,7 @@
             $('#btn').click(function(){
 
                 $.ajax({
-                    url: 'realdata.json',
+                    url: 'data.json',
                     dataType: 'json',
                     error: function(){
                         alert('error')
@@ -55,13 +55,36 @@
                     
                     }
                 }); //end of ajax
-                    
             }); //end of button event
         }); //end of onloading
     </script>
+<style>
+    #btn{
+        margin: 0 0 10px 0;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 2px solid black;
+        /*세로선까지 주고싶으면 border-top 을 border로 th,td 에도 border-bottom을 border로 바꾸면 됨*/
+    }
+    th,td{
+        border-bottom: 1px solid black;
+        padding: 3px;
+    }
+
+    th{
+        background-color: powderblue;
+    }
+
+    td{
+        text-align: center;
+    }
+</style>
 </head>
 <body>
     <button id="btn">가져오기</button>
+    
     <div id="sel">
 
     </div>
