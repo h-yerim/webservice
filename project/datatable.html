@@ -21,7 +21,8 @@
                         //console.log(typeof json);
                         
                         const dataArray = json.data;
-                        let html = "<table>";
+                        let html = "<div class=table-resposive>";
+                        html += "<table>";
                         html += "<tr>";
                         html += "<th>건축연도</th>";
                         html += "<th>구분</th>";
@@ -51,6 +52,7 @@
                             html += "</tr>";
                         }
                         html += "</table>";
+                        html += "</div>";
                         $("#sel").append(html);
                     
                     }

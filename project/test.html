@@ -52,6 +52,100 @@
 	    }
 ];
 
+var positions2 = [
+        {
+        address:'서울특별시 중구 장충동2가 197',
+        text: '장충단비'
+        },
+	    {
+		address:'서울특별시 중구 방산동 4-96',
+		text:'성제묘'
+	    },
+	    {
+		address:'서울특별시 중구 장충동2가 197-1',
+		text:'수표교'
+	    },
+	    {
+		address:'서울특별시 중구 정동 10-1',
+		text:'미국공사관'
+	    },
+	    {
+		address:'서울특별시 중구 만리동2가 6-1',
+		text:'손기정월계관기념수'
+	    },
+	    {
+		address:'서울특별시 중구 예장동 8-1',
+		text:'목멱산봉수대터'
+	    },
+	    {
+		address:'서울특별시 중구 정동 34-5',
+		text:'배재학당동관'
+	    },
+	    {
+		address:'서울특별시 중구 남대문로1가 19',
+		text:'광통관'
+	    },
+	    {
+		address:'서울특별시 중구 정동 1-23',
+		text:'구세군중앙회관'
+	    },
+	    {
+		address:'서울특별시 중구 예장동 산5-6',
+		text:'와룡묘'
+	    },
+        {
+        address:'서울특별시 중구 장충동2가 186-140',
+		text:'관성묘'
+	    },
+        {
+        address:'서울특별시 중구 필동2가 84-1',
+		text:'삼청동오장위김춘영가옥'
+	    },
+        {        
+        address:'서울특별시 중구 만리동2가 207',
+		text:'만리동정영국가'
+	    },
+        {        
+        address:'서울특별시 중구 소공동 97-3',
+		text:'원구단 정문'
+	    }
+];
+
+var positions3 = [
+        {
+        address:'서울특별시 중구 남대문로2가 5',
+        text: '서울 남대문로 한국전력공사 사옥'
+        },
+	    {
+		address:'서울특별시 중구 정동 32-1',
+		text:'서울 이화여자고등학교 심슨기념관'
+	    },
+	    {
+		address:'서울특별시 중구 태평로1가 60-1',
+		text:'서울 구 국회의사당'
+	    },
+	    {
+		address:'서울특별시 중구 태평로1가 31',
+		text:'구 서울특별시청사'
+	    },
+	    {
+		address:'서울특별시 중구 서소문동 37',
+		text:'서울 구 대법원 청사'
+	    },
+	    {
+		address:'서울특별시 중구 을지로1가 63',
+		text:'서울 구 미국문화원'
+	    },
+	    {
+		address:'서울특별시 중구 정동3',
+		text:'경운궁 양이재'
+	    },
+	    {
+		address:'서울특별시 중구 정동 1-28',
+		text:'서울 구 신아일보 별관'
+	    }
+];
+
          $(function(){
             $('#btn1').click(function(){
           
@@ -105,17 +199,17 @@
           
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
             mapOption = { 
-                center: new kakao.maps.LatLng(37.564562447100876,126.97728333979637), // 지도의 중심좌표
-                level: 5 // 지도의 확대 레벨
+                center: new kakao.maps.LatLng(37.56068957662345,126.98650879053027), // 지도의 중심좌표
+                level: 7 // 지도의 확대 레벨
             };   
 
             var map = new kakao.maps.Map(mapContainer, mapOption);
             
-            for(let i = 0; i < positions1.length; i++){
+            for(let i = 0; i < positions2.length; i++){
             // 주소-좌표 변환 객체를 생성합니다
             var geocoder = new kakao.maps.services.Geocoder();
             // 주소로 좌표를 검색합니다
-            geocoder.addressSearch(positions1[i].address, function(result, status) {
+            geocoder.addressSearch(positions2[i].address, function(result, status) {
 
             // 정상적으로 검색이 완료됐으면 
             if (status === kakao.maps.services.Status.OK) {
@@ -130,7 +224,7 @@
 
             //인포윈도우로 장소에 대한 설명을 표시합니다
             var infowindow = new kakao.maps.InfoWindow({
-                content: '<div style="width:140px;text-align:center;padding:3px 0;">'+positions1[i].text+'</div>'
+                content: '<div style="width:140px;text-align:center;padding:3px 0;">'+positions2[i].text+'</div>'
             });
             // 마커에 클릭이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'click', function() {
@@ -144,7 +238,7 @@
         });
         }
 
-         }); //end of #btn1 function
+         }); //end of #btn2 function
 
          }); //end of function
 
@@ -153,17 +247,17 @@
           
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
             mapOption = { 
-                center: new kakao.maps.LatLng(37.564562447100876,126.97728333979637), // 지도의 중심좌표
+                center: new kakao.maps.LatLng(37.56563476118024, 126.9779621467762), // 지도의 중심좌표
                 level: 5 // 지도의 확대 레벨
             };   
 
             var map = new kakao.maps.Map(mapContainer, mapOption);
             
-            for(let i = 0; i < positions1.length; i++){
+            for(let i = 0; i < positions3.length; i++){
             // 주소-좌표 변환 객체를 생성합니다
             var geocoder = new kakao.maps.services.Geocoder();
             // 주소로 좌표를 검색합니다
-            geocoder.addressSearch(positions1[i].address, function(result, status) {
+            geocoder.addressSearch(positions3[i].address, function(result, status) {
 
             // 정상적으로 검색이 완료됐으면 
             if (status === kakao.maps.services.Status.OK) {
@@ -178,7 +272,7 @@
 
             //인포윈도우로 장소에 대한 설명을 표시합니다
             var infowindow = new kakao.maps.InfoWindow({
-                content: '<div style="width:140px;text-align:center;padding:3px 0;">'+positions1[i].text+'</div>'
+                content: '<div style="width:140px;text-align:center;padding:3px 0;">'+positions3[i].text+'</div>'
             });
             // 마커에 클릭이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'click', function() {
@@ -192,7 +286,7 @@
         });
         }
 
-         }); //end of #btn1 function
+         }); //end of #btn3 function
 
          }); //end of function
 
